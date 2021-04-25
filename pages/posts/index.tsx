@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import MasterLayout from "@components/Layouts";
-import { getAllPosts } from '@lib/utils';
+import { getSortedPostsData } from '@lib/utils';
 
 type Props = {
   allPosts?: Array<any>;
@@ -8,7 +8,7 @@ type Props = {
 
 const PostsPage: NextPage<Props> = ({ allPosts }) => {
   const allPostsList = allPosts.map((post) =>
-    <li key={post.slug}><a href={`/posts/${post.slug}`}>{post.title} - {post.date}</a></li>)
+    <li key={post.id}><a href={`/posts/${post.id}`}>{post.title} - {post.date}</a></li>)
   return (
     <MasterLayout title="Posts">
       <ul>
@@ -21,14 +21,7 @@ const PostsPage: NextPage<Props> = ({ allPosts }) => {
 export default PostsPage;
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+  const allPosts = getSortedPostsData()
 
   return {
     props: { allPosts },
