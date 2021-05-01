@@ -25,7 +25,7 @@ const MasterLayout: FC<Props> = ({
                         <Nav.Link href="/posts">Posts</Nav.Link>
                         <Nav.Link href="/">Projects</Nav.Link>
                         <Nav.Link href="/">About</Nav.Link>
-                        <Nav.Link href="https://ping.locmai.dev/" target="blank">Services Status</Nav.Link>
+                        <Nav.Link href="https://ping.locmai.dev/" target="blank">Status</Nav.Link>
                     </Navbar.Collapse>
                 </Navbar></Col>
         </Row>
