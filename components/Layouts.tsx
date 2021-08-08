@@ -22,9 +22,9 @@ const MasterLayout: FC<Props> = ({
                     <Navbar.Toggle />
 
                     <Navbar.Collapse>
-                        <Nav.Link href="/posts">Posts</Nav.Link>
-                        <Nav.Link href="/">Projects</Nav.Link>
-                        <Nav.Link href="/">About</Nav.Link>
+                        {/* <Nav.Link href="/posts">Posts</Nav.Link> */}
+                        <Nav.Link href="/projects">Projects</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
                         <Nav.Link href="https://ping.locmai.dev/" target="blank">Status</Nav.Link>
                     </Navbar.Collapse>
                 </Navbar></Col>

@@ -10,7 +10,7 @@ const PostsPage: NextPage<Props> = ({ allPosts }) => {
   const allPostsList = allPosts.map((post) =>
     <li key={post.id}><a href={`/posts/${post.id}`}>{post.title} - {post.date}</a></li>)
   return (
-    <MasterLayout title="Posts">
+    <MasterLayout>
       <ul>
         {allPostsList}
       </ul>
