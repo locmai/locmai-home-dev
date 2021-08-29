@@ -1,7 +1,7 @@
 ---
 title: 'The Layered Architecture'
 excerpt: "The one architecture that just simply work."
-date: "2021-29-09"
+date: "2021-09-28"
 author:
   name: Loc Mai
 ---
