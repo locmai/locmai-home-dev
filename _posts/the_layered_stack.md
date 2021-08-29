@@ -138,7 +138,7 @@ So the Helm-based chart looks like:
 
 Where everything could be manipulated by the main values.yaml, and everything could be made parameterized.
 
-For example, I made the blackping app to have a swithc that turn on/off the app:
+For example, I made the blackping app to have a switch that turn on and off the app:
 
 ```yaml
 # ./templates/blackping.yaml
@@ -147,7 +147,7 @@ For example, I made the blackping app to have a swithc that turn on/off the app:
 {{- end }}
 ```
 
-And in the main values.yaml, to turn it on:
+And in the main values.yaml, to turn it on, specify `blackping.enabled` value:
 
 ```yaml
 # ./values.yaml
