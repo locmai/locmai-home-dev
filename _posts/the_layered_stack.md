@@ -92,7 +92,7 @@ The Ansible stack Just contain a playbook for DDNS setup.
 
 The Terraform stack would:
 
-- **Spin up a Kubernetes cluster**: Using the RKE provider, create 
+- **Spin up a Kubernetes cluster**: Using the RKE provider. 
 - **Initilize resources**: Prepare for the next layers those need 
   - ArgoCD for GitOps and continuous delivery.
   - MetalLB and Nginx for network load balancing.
