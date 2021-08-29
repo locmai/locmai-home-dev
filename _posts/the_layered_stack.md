@@ -1,7 +1,7 @@
 ---
 title: 'The Layered Architecture'
 excerpt: "The one architecture that just simply work."
-date: "2021-29-09"
+date: "2021-09-28"
 author:
   name: Loc Mai
 ---
@@ -63,7 +63,7 @@ Let's go through one by one and see what they (will) do and have.
 
 ### Layer 0: Metal
 
-![Having a metal arm is awesome](https://raw.githubusercontent.com/locmai/locmai-home-dev/87f479458389670931dcff4ea4e42d386f6ca6ba/static/img/metalarm.gif)
+![Having a metal arm is awesome](https://raw.githubusercontent.com/locmai/locmai-home-dev/main/static/img/metalarm.gif)
 
 One must have something made of metal to be awesome, this layer provides Ansible playbooks for preparing the following:
 
@@ -181,7 +181,7 @@ I'm using a couple of third-party services that I don't find a better one to rep
 
 My blog is built and hosted on CloudFlare, this is their status:
 
-![CloudFlare is a beast](https://raw.githubusercontent.com/locmai/locmai-home-dev/87f479458389670931dcff4ea4e42d386f6ca6ba/static/img/ping2909.gif)
+![CloudFlare is a beast](https://raw.githubusercontent.com/locmai/locmai-home-dev/main/static/img/ping2909.png)
 
 
 The blog page above (picture captured on Sept 29th) is also surviving one big outage from Fastly this year that took down several big services like GitHub, StackOverflow but not ... uh uh CloudFlare!

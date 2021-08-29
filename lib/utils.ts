@@ -51,7 +51,7 @@ export function getAllPostIds() {
 }
 
 export function getAllProjectIds() {
-  return getAllArticleIds(postsDirectory);
+  return getAllArticleIds(projectsDirectory);
 }
 
 export function getAllArticleIds(articleDirectory: string) {
