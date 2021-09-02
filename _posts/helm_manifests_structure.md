@@ -1,6 +1,6 @@
 ---
 title: 'How to structure Helm code'
-excerpt: "Simpliest way to"
+excerpt: "Simpliest way to write deployable Helm code"
 date: "2021-09-02"
 author:
   name: Loc Mai
