@@ -90,6 +90,6 @@ export async function getArticleData(id: string, articleDirectory: string) {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string }),
+    ...(matterResult.data as { date: string; title: string, tags: Array<String> }),
   };
 }
