@@ -4,6 +4,9 @@ excerpt: "Let's start this blog off with why I have this project in the first pl
 date: "2021-08-08"
 author:
   name: Loc Mai
+tags:
+  - humble
+  - homelab
 ---
 
 
