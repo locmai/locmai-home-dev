@@ -2,6 +2,7 @@ import MasterLayout from '@components/Layouts';
 import Date from '@components/Date';
 import { getAllPostIds, getPostData } from '@lib/utils'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { Tag } from 'antd';
 
 export default function Post({
   postData
@@ -10,8 +11,12 @@ export default function Post({
     title: string
     date: string
     contentHtml: string
+    tags: Array<String>
   }
-}) {
+  }) {
+  
+  const tagsContent = postData.tags.map((tag) => <Tag>#{tag} </Tag>);
+
   return (
     <MasterLayout>
       <article>
@@ -19,10 +24,11 @@ export default function Post({
         <div>
           <Date dateString={postData.date} />
         </div>
+        <div>{tagsContent}</div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </MasterLayout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
