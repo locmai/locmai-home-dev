@@ -4,6 +4,9 @@ excerpt: "Simpliest way to write deployable Helm code"
 date: "2021-09-02"
 author:
   name: Loc Mai
+tags:
+  - helm
+  - kubernetes
 ---
 
 ## Isn't it just ... templating?

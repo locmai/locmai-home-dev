@@ -4,6 +4,9 @@ excerpt: "The one architecture that just simply work."
 date: "2021-08-28"
 author:
   name: Loc Mai
+tags:
+  - humble
+  - homelab
 ---
 
 ## So ... what is it???
