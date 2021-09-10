@@ -154,7 +154,7 @@ pokemon_list = [
 ]
 ```
 
-If I wanna filter and get the list of 'Fire' pokemon, I could d owiht one line:
+If I wanna filter and get the list of 'Fire' pokemon, I could do with just one line:
 
 ```python
 fire_pokemon_name_list = [pokemon['name'] for pokemon in pokemon_list if 'Fire' in pokemon['type']]
