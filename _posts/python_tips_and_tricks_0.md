@@ -248,5 +248,4 @@ From the IDE, we could now see what parameter needed with what type, and the typ
 .
 .
 .
-.
 Well, that's it for now, happy coding.
