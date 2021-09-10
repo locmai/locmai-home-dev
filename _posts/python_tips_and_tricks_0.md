@@ -163,6 +163,26 @@ print(fire_pokemon_name_list)
 # result: ['Charizard', 'Cinderace']
 ```
 
+## Type hinting
+
+Python go with dynamic typing model which is good if you didn't really care about type-safe. But if you were writing library code that the others would use, you could provide some typing hints for your users:
+
+For example, we have library.py with greeting:
+
+```python
+# library.py
+def greeting(name: str) -> str:
+    return f'Hello {name}'
+```
+
+Pretending we are the users importing the library code:
+
+```
+from library import greeting
+```
+
+From the IDE, we could now see what parameter needed with what type, and the type of the returned value from the function greeting()
+
 ## Bonus: Postional parameters and keyword parameters
 
 Never thought I should put this on the list until I have to debate with someone that using this properly can make their code better and they refused to use it, then later on see the useful of it.
@@ -223,26 +243,6 @@ def CustomGraph(data_source, title, expressions, **kwargs) -> Graph:
         **kwargs
     )
 ```
-
-## Type hinting
-
-Python go with dynamic typing model which is good if you didn't really care about type-safe. But if you were writing library code that the others would use, you could provide some typing hints for your users:
-
-For example, we have library.py with greeting:
-
-```python
-# library.py
-def greeting(name: str) -> str:
-    return f'Hello {name}'
-```
-
-Pretending we are the users importing the library code:
-
-```
-from library import greeting
-```
-
-From the IDE, we could now see what parameter needed with what type, and the type of the returned value from the function greeting()
 
 .
 .
