@@ -103,7 +103,7 @@ We gathered a few things on 1 machine:
 - `netstat -su` will give the receive buffer errors metric, which is high AF.
 - `netstat -unlp|grep -e PID -e udp-proxy` and we got the Recv-Q peaked at around 210k(MB) which matched the system network core maximum allowed for one process, check with the command `sysctl net.core.rmem_max` 
 
-Next step, I started re-written the load test so that it could cause the state above with JMeter, the load test is kinda simple, just looping with no sleeping time between each loop with the help of this plugin: https://jmeter-plugins.org/wiki/UDPRequest/
+Next step, I started implementing a new load test so that it could cause the state above with JMeter, the load test is kinda simple, just looping with no sleeping time between each loop with the help of this plugin: https://jmeter-plugins.org/wiki/UDPRequest/
 
 Boom, with a right amount of load, we could prove reproduce the case and benchmark our resource usage, then detect the bottleneck was from the following lines:
 
@@ -126,13 +126,13 @@ for {
 }
 ```
 
-It's a simple for loop, read the packet then simply write to target source connections. the line `v.Write` here will block the next loop since this is running in single thread.
+It's a simple for loop, read the packet then simply write it to target connections. the line `v.Write` here will block the next loop since this is running in single thread.
 
 So ...
 
 <img alt="go solution" src="https://raw.githubusercontent.com/locmai/locmai-home-dev/main/static/img/boomudp.png" width="30%" height="30%">
 
-Leverage the best use of Go, we started refactoring and improving the code a bit, adding MetricWrite so it could handle each target source connections separately:
+Leverage the best use of Go, we started refactoring and improving the code a bit, adding MetricWriter so it could handle each target connections separately:
 
 ```go
 type MetricPacket struct {
