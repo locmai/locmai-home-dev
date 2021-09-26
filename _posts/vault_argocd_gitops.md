@@ -120,7 +120,7 @@ vault kv put secret/postgresql/data \
 
 Now we can inject it in our pods, refer to the document here [https://www.vaultproject.io/docs/platform/k8s/injector](https://www.vaultproject.io/docs/platform/k8s/injector).
 
-As example, in my ArgoCD app, I injected the secrets via the ENV VAR "DSN" for Ory Kratos to take it as the connection string to the PostgreSQL database: [https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/apps/argocd/templates/ory-kratos.yaml#L80-L87](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/apps/argocd/templates/ory-kratos.yaml#L80-L87)
+As example, in my ArgoCD app, I injected the secrets via the ENV VAR "DSN" for Ory Kratos to take it as the connection string to the PostgreSQL database: [ory-kratos.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/apps/argocd/templates/ory-kratos.yaml#L80-L87)
 
 ```yaml
 annotations:
@@ -194,7 +194,7 @@ server:
 ```
 
 
-Here is the full values.yaml file: [https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/helm-values/argocd.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/helm-values/argocd.yaml)
+Here is the full values.yaml file: [argocd.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/helm-values/argocd.yaml)
 
 Let's put a new secret
 
