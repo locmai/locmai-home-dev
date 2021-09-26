@@ -229,7 +229,7 @@ adder(4,5,6,7)
 adder(1,2,3,5,6)
 ```
 
-The case I had the debate was how to write a custom Graph helper that extends and return the basic Graph class https://github.com/weaveworks/grafanalib/blob/c475af024768b6123e36f4a82d40e2b658052ff0/grafanalib/core.py#L1321
+The case I had the debate was how to write a custom Graph helper that extends and return the basic [Graph class](https://maibaloc.com/posts/vault_argocd_gitops) 
 
 ```python
 import grafanalib.core as Graph
