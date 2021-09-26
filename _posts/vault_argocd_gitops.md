@@ -1,6 +1,6 @@
 ---
-title: 'How to Use HashiCorp Vault and Argo CD for GitOps'
-excerpt: "How to Use HashiCorp Vault and Argo CD for GitOps: ArgoCD + Vault + vault-argocd-plugin"
+title: 'How to Use HashiCorp Vault and ArgoCD for GitOps'
+excerpt: "How to Use HashiCorp Vault and ArgoCD for GitOps: ArgoCD + Vault + vault-argocd-plugin"
 date: "2021-09-27"
 author:
   name: Loc Mai
