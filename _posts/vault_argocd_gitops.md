@@ -20,7 +20,7 @@ For my own convenience: Vault = HashiCorp Vault
 
 I followed through this official [article](https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar). The idea is enable Kubernetes authentication in Vault, bind a Kubernetes Service Account to a role in Vault, then setting the role to allow the pods that go with the Service Account to read the secrets in a scoped manner.
 
-Started installing it with the official Helm chart for Vault via Terraform: [https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/init-resources.tf#L16](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/init-resources.tf#L16) 
+Started installing it with the official Helm chart for Vault via Terraform: [init-resources.tf](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/init-resources.tf#L16) 
 
 The dependency here will be longhorn for the persitent block storage that will be Vault backend:
 
