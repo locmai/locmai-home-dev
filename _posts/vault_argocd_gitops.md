@@ -14,7 +14,7 @@ tags:
 
 There is various way to manage your secrets, HashiCorp Vault just happened to be a pretty much widely known approach that I had in mind. So for Humble project, I used it as the core secret management system that go along with Kubernetes secrets themselves. So in this post I'd like to share how I use HashipCorp Vault with ArgoCD to deploy secrets across my system.
 
-For the convinient of this blog: Vault = HashiCorp Vault
+For my own convenience: Vault = HashiCorp Vault
 
 ## Injecting Vault secrets into Kubernetes pods via sidecar
 
@@ -265,7 +265,8 @@ spec:
 
 And the secret injected nice and easy!
 
-![Secret injected](https://raw.githubusercontent.com/locmai/locmai-home-dev/main/static/img/argocdsecrets.png)
+
+<img alt="Secret injected" src="https://raw.githubusercontent.com/locmai/locmai-home-dev/main/static/img/argocdsecrets.png" width="40%" height="40%">
 
 Here's some other options people are doing GitOps secrets: [https://argoproj.github.io/argo-cd/operator-manual/secret-management](https://argoproj.github.io/argo-cd/operator-manual/secret-management/)
 
