@@ -1,5 +1,5 @@
 ---
-title: 'How to Use HashiCorp Vault and ArgoCD for GitOps'
+title: 'How to use HashiCorp Vault and ArgoCD for GitOps'
 excerpt: "How to Use HashiCorp Vault and ArgoCD for GitOps: ArgoCD + Vault + vault-argocd-plugin"
 date: "2021-09-27"
 author:
@@ -18,7 +18,7 @@ For my own convenience: Vault = HashiCorp Vault
 
 ## Injecting Vault secrets into Kubernetes pods via sidecar
 
-I followed through this official [article](https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar). The idea is enable Kubernetes authentication in Vault, bind a Kubernetes Service Account to a role in Vault, then setting the role to allow the pods that go with the Service Account to read the secrets in a scoped manner.
+I followed through the official [article](https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar). The idea is enable Kubernetes authentication in Vault, bind a Kubernetes Service Account to a role, then setting that role to allow the pods that go with the Service Account to read the secrets in a scoped manner.
 
 Started installing it with the official Helm chart for Vault via Terraform: [init-resources.tf](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/init-resources.tf#L16) 
 
@@ -35,7 +35,7 @@ injector:
   enabled: true
 ```
 
-Vault will be up and running in a few seconds, we will need to init it and unseal first, step by step:
+Vault will be up and running in a few seconds, we will initialize and unseal it first, step by step:
 
 ```sh
 kubectl exec -n vault -ti vault-0 /bin/sh
@@ -64,7 +64,7 @@ First, enable the Kubernets authentication
 vault auth enable kubernetes
 ```
 
-Now if you were on one of the control plane node of your cluster, quickest way set this up is:
+Now if you were on one of the control plane node of your cluster, the quickest way to set this up is:
 
 ```sh
 vault write auth/kubernetes/config \
@@ -102,10 +102,10 @@ vault write auth/kubernetes/config \
 Let's create a role and bind that role to our Service Account:
 
 ```sh
-vault write auth/kubernetes/role/myapp \
-   bound_service_account_names=app \
-   bound_service_account_namespaces=demo \
-   policies=app \
+vault write auth/kubernetes/role/postgresql_read_only \
+   bound_service_account_names=apps \
+   bound_service_account_namespaces=apps \
+   policies=postgresql_read_only \
    ttl=1h
 ```
 
@@ -120,7 +120,7 @@ vault kv put secret/postgresql/data \
 
 Now we can inject it in our pods, refer to the document here [https://www.vaultproject.io/docs/platform/k8s/injector](https://www.vaultproject.io/docs/platform/k8s/injector).
 
-As example, in my ArgoCD app, I injected the secrets via the ENV VAR "DSN" for Ory Kratos to take it as the connection string to the PostgreSQL database: [ory-kratos.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/apps/argocd/templates/ory-kratos.yaml#L80-L87)
+As an example, in my ArgoCD apps folder, I injected the secrets via the ENV VAR "DSN" for Ory Kratos to take it as the connection string to the PostgreSQL database: [ory-kratos.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/apps/argocd/templates/ory-kratos.yaml#L80-L87)
 
 ```yaml
 annotations:
@@ -138,9 +138,9 @@ And let the sidecar do it's job!
 
 ## Using vault-argocd-plugin
 
-Injecting the secrets into pods was easy and straight forward. But what if we wanted to inject it on the fly to other resources like Kubernetes secrets? And this is when vault-argocd-plugin come to aid us. 
+Injecting the secrets into pods is quite easy and straightforward. But what if we wanted to inject it on the fly to other resources like Kubernetes secrets or custom resources? And this is when vault-argocd-plugin comes to aid us. 
 
-[vault-argocd-plugin](https://github.com/IBM/argocd-vault-plugin) is an ArgoCD plugin provided by IBM. To set this up, first install the binary build via the initContainer, I used the Helm chart so it's pretty straight forward like this:
+[vault-argocd-plugin](https://github.com/IBM/argocd-vault-plugin) is an ArgoCD plugin provided by IBM for helping us doing so. To set this up, first install the executable binary via the initContainer, I used the Helm chart which includes the YAML code for that:
 
 ```yaml
 repoServer:
@@ -174,7 +174,7 @@ repoServer:
       subPath: argocd-vault-plugin
 ```
 
-Next, we have to configure the plugin:
+Next, we configure plugin so ArgoCD would be able to know how to use it:
 
 ```yaml
 server:
@@ -194,7 +194,7 @@ server:
 ```
 
 
-Here is the full values.yaml file: [argocd.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/helm-values/argocd.yaml)
+Here is the values.yaml file: [argocd.yaml](https://github.com/locmai/humble/blob/7e5eaf271b5b88f83ea8460935d195f39bb11acd/infras/terraform/helm-values/argocd.yaml)
 
 Let's put a new secret
 
@@ -204,7 +204,7 @@ vault kv put secret/humble/demo \
       ttl='30s'
 ```
 
-Now, let's create a policy and a role:
+Now, create a policy and a role:
 
 ```sh
 kubectl exec -ti vault-0 /bin/sh
