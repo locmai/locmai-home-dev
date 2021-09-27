@@ -90,9 +90,7 @@ export SA_CA_CRT=$(kubectl config view --raw --minify --flatten \
     --output 'jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
 export K8S_HOST=$(kubectl config view --raw --minify --flatten \
     --output 'jsonpath={.clusters[].cluster.server}')
-export K8S_HOST=$(kubectl config view --raw --minify --flatten \
-    --output 'jsonpath={.clusters[].cluster.server}')
-    i`
+
 vault write auth/kubernetes/config \
         token_reviewer_jwt="$SA_JWT_TOKEN" \
         kubernetes_host="$K8S_HOST" \
