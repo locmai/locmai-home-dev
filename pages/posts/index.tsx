@@ -24,7 +24,7 @@ const PostsPage: NextPage<Props> = ({ allPosts, allTags }) => {
   ));
 
   return (
-    <MasterLayout>
+    <MasterLayout title="./posts">
       <h3>Recent posts</h3>
       <ul>{allPostsList}</ul>
       <h3>Tags</h3>

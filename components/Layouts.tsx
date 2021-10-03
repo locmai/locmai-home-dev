@@ -13,7 +13,7 @@ const MasterLayout: FC<Props> = ({
 }) => (
   <Container fluid>
     <Head>
-      <title>Loc Mai</title>
+      <title>{title}</title>
     </Head>
     <Row>
       <Col>

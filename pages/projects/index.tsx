@@ -15,7 +15,8 @@ const ProjectsPage: NextPage<Props> = ({ allProjects }) => {
     </li>
   ));
   return (
-    <MasterLayout>
+    <MasterLayout title="./projects">
+      <h3>Projects that I currently working on</h3>
       <ul>{allProjectsList}</ul>
     </MasterLayout>
   );

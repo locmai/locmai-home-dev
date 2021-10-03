@@ -3,8 +3,8 @@ import MasterLayout from "@components/Layouts";
 
 const AboutPage: NextPage = () => {
   return (
-    <MasterLayout>
-      <h4>404 - I have not found myself yet :(</h4>
+    <MasterLayout title="./about">
+      <h2>404 - I have not found myself yet :(</h2>
     </MasterLayout>
   );
 };

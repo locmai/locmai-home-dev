@@ -13,7 +13,7 @@ export default function Project({
   };
 }) {
   return (
-    <MasterLayout>
+    <MasterLayout title={projectData.title}>
       <article>
         <h1>{projectData.title}</h1>
         <div>

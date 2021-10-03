@@ -18,7 +18,7 @@ export default function Post({
   const tagsContent = postData.tags.map((tag) => <Tag>#{tag} </Tag>);
 
   return (
-    <MasterLayout>
+    <MasterLayout title={postData.title}>
       <article>
         <h1>{postData.title}</h1>
         <div>
