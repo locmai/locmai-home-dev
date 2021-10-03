@@ -35,3 +35,26 @@ a, a:hover {
 .section {
   padding: 0px 20px;
 }
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
+hr {
+  margin: 0px;
+}
+
+.col {
+  padding: 5px;
+}
+
+.navbar {
+  padding: 1px;
+}

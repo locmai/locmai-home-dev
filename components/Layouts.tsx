@@ -18,14 +18,13 @@ const MasterLayout: FC<Props> = ({
     <Row>
       <Col>
         <Navbar className="navbar">
-          <Navbar.Brand href="/">{title}</Navbar.Brand>
           <Navbar.Toggle />
 
           <Navbar.Collapse>
-            {/* <Nav.Link href="/posts">Posts</Nav.Link> */}
-            <Nav.Link href="/posts">Posts</Nav.Link>
-            <Nav.Link href="/projects">Projects</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/">/home/lmai</Nav.Link>
+            <Nav.Link href="/posts">./posts</Nav.Link>
+            <Nav.Link href="/projects">./projects</Nav.Link>
+            <Nav.Link href="/about">./about</Nav.Link>
           </Navbar.Collapse>
         </Navbar>
       </Col>
@@ -41,9 +40,6 @@ const MasterLayout: FC<Props> = ({
       <Col>
         <footer className="footer">
           <div>
-            <Nav.Link href="https://ping.locmai.dev/" target="blank">
-              Sites Status
-            </Nav.Link>
             <span>&copy; 2021 Loc Mai.</span>
           </div>
         </footer>
