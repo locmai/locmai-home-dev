@@ -1,6 +1,6 @@
 ---
 title: 'Humble Revamp'
-excerpt: "Be humble."
+excerpt: "Re: Humble"
 date: "2021-11-26"
 author:
   name: Loc Mai
