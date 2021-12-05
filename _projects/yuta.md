@@ -1,7 +1,7 @@
 ---
 title: 'Yuta Mid-2022'
-excerpt: "Be humble."
-date: "2021-10-11"
+excerpt: "An Ops bot that you want and need."
+date: "2022-06-11"
 author:
   name: Loc Mai
 tags:

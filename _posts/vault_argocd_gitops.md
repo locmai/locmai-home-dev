@@ -8,6 +8,7 @@ tags:
   - gitops 
   - kubernetes
   - vault
+published: true
 ---
 
 ## Context

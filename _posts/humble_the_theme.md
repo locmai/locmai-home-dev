@@ -7,6 +7,7 @@ author:
 tags:
   - humble
   - homelab
+published: true
 ---
 
 
