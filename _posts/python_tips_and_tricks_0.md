@@ -6,6 +6,7 @@ author:
   name: Loc Mai
 tags:
   - python
+published: true
 ---
 
 I will just throw some random tips and tricks in Python that I've found that I thought was really helpful but most people don't use much.

@@ -10,12 +10,12 @@ tags:
 
 # Status
 
-Start date: 2021-02-11
-End date: N/A
-Final version: N/A
+- Start date: 2021-08-08
+- End date: TBD
+- Final version: TBD
 
-Link to the project: [Humble main repository]([https://github.com/locmai/humble])
+# Background
 
-# Description
-
-TBU
+To prepare for the new projects on 2022, a rework on the Humble project is needed - so **Humble Revamp** is up next a.k.a **Re:Humble**. This project would/might include:
+- Up and running just with one-button from Genesis project.
+- Fully-automated infrastructures and applications.

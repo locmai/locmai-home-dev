@@ -8,6 +8,7 @@ tags:
   - golang
   - performance
   - monitoring
+published: true
 ---
 
 ### Context

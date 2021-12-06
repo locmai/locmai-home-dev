@@ -7,6 +7,7 @@ author:
 tags:
   - helm
   - kubernetes
+published: true
 ---
 
 ## Isn't it just ... templating?
